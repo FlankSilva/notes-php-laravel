@@ -13,7 +13,17 @@
                             <strong>
                                 {{ date('Y-m-d H:i:s', strtotime($note['created_at'])) }}
                             </strong>
+                    </small>
+                    @if($note['created_at'] != $note['updated_at'])
+                        <small class="text-secondary ms-5">
+                            <span class="opacity-75 me-2">
+                                Updated at:
+                            </span>
+                                <strong>
+                                    {{ date('Y-m-d H:i:s', strtotime($note['updated_at'])) }}
+                                </strong>
                         </small>
+                    @endif
                 </div>
                 <div class="col text-end">
                     <a
